@@ -1,9 +1,0 @@
-prepare:
-    steps:
-        - command: ~/.bun/bin/bun install
-test:
-    steps: []
-run:
-    steps:
-        -name: run
-        command: ~/.bun/bin/bun /home/user/app/index.ts
