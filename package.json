@@ -1,0 +1,17 @@
+{
+    "name": "browsersize.app",
+    "module": "index.ts",
+    "type": "module",
+    "devDependencies": {
+        "bun-types": "latest"
+    },
+    "scripts": {
+        "staging": "bun --hot run index.ts"
+    },
+    "peerDependencies": {
+        "typescript": "^5.0.0"
+    },
+    "dependencies": {
+        "hono": "^3.6.0"
+    }
+}
