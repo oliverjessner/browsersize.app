@@ -1,4 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
+@font-face {
+    font-family: 'Lato';
+    src: url('/assets/fonts/Lato-Latin.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('/assets/fonts/Lato-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
 
 * {
     --font-size: 3em;
