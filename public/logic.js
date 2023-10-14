@@ -6,10 +6,12 @@ const indicator = document.querySelector('#indicator');
 let isViewport = true;
 
 function setSizes() {
-    requestAnimationFrame(function () {
-        heightContainer.textContent = window.innerHeight;
-        widthContainer.textContent = window.innerWidth;
-    });
+    if (isViewport) {
+        requestAnimationFrame(function () {
+            heightContainer.textContent = window.innerHeight;
+            widthContainer.textContent = window.innerWidth;
+        });
+    }
 }
 
 function toggleSize() {
