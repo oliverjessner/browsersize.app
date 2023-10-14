@@ -64,3 +64,8 @@ main {
 .indicator:hover {
     color: #3c74a8;
 }
+
+.sizes,
+.indicator {
+    user-select: none;
+}
