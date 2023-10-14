@@ -6,7 +6,6 @@ const indicator = document.querySelector('#indicator');
 let isViewport = true;
 
 function setSizes() {
-    // Überprüft, ob der aktuelle Modus "Viewport" ist
     if (isViewport) {
         requestAnimationFrame(function () {
             heightContainer.textContent = window.innerHeight;
