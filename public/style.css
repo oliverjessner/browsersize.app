@@ -33,8 +33,16 @@ body {
 
 main {
     display: flex;
+    flex-direction: column;
     gap: 1em;
+    align-items: center;
     cursor: pointer;
+}
+
+.dimensions {
+    display: flex;
+    gap: 1em;
+    align-items: center;
 }
 
 .letters-numbers {
@@ -47,4 +55,9 @@ main {
 
 .x {
     line-height: 1.75em;
+}
+
+.indicator {
+    text-align: center;
+    font-size: 1.5em;
 }

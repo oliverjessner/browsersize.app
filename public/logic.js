@@ -1,6 +1,7 @@
-const heightContainer = document.querySelector('#height');
-const widthContainer = document.querySelector('#width');
 const main = document.querySelector('main');
+const heightContainer = main.querySelector('#height');
+const widthContainer = main.querySelector('#width');
+const indicator = document.querySelector('#indicator');
 
 let isViewport = true;
 
@@ -19,6 +20,8 @@ function toggleSize() {
         widthContainer.textContent = width;
         heightContainer.textContent = height;
 
+        indicator.textContent = isViewport ? 'resolution' : 'viewport';
+
         isViewport = !isViewport;
     });
 }
@@ -26,4 +29,3 @@ function toggleSize() {
 setSizes();
 window.addEventListener('resize', setSizes);
 main.addEventListener('click', toggleSize);
-
