@@ -1,5 +1,8 @@
 const heightContainer = document.querySelector('#height');
 const widthContainer = document.querySelector('#width');
+const main = document.querySelector('main');
+
+let isViewport = true;
 
 function setSizes() {
     requestAnimationFrame(function () {
@@ -8,6 +11,19 @@ function setSizes() {
     });
 }
 
-setSizes();
+function toggleSize() {
+    requestAnimationFrame(function () {
+        const width = isViewport ? screen.width : window.innerWidth;
+        const height = isViewport ? screen.height : window.innerHeight;
 
+        widthContainer.textContent = width;
+        heightContainer.textContent = height;
+
+        isViewport = !isViewport;
+    });
+}
+
+setSizes();
 window.addEventListener('resize', setSizes);
+main.addEventListener('click', toggleSize);
+
