@@ -65,7 +65,7 @@ main {
     color: #3c74a8;
 }
 
-.sizes,
+.sizes:first-child,
 .indicator {
     user-select: none;
 }
