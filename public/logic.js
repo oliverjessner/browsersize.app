@@ -19,6 +19,8 @@ function toggleSize() {
         widthContainer.textContent = width;
         heightContainer.textContent = height;
 
+        indicator.textContent = isViewport ? "resolution" : "viewport";
+
         isViewport = !isViewport;
     });
 }
