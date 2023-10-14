@@ -1,0 +1,6 @@
+@media (hover: none) {
+    html,
+    body {
+        height: 100dvh;
+    }
+}
