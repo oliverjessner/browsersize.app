@@ -40,9 +40,9 @@ main {
 }
 
 .dimensions {
-    display: flex; 
+    display: flex;
     gap: 1em;
-    align-items: center; 
+    align-items: center;
 }
 
 .letters-numbers {
@@ -57,7 +57,7 @@ main {
     line-height: 1.75em;
 }
 
-#indicator {
+.indicator {
     text-align: center;
     font-size: 1.5em;
 }
