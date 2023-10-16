@@ -3,4 +3,19 @@
     body {
         height: 100dvh;
     }
+
+/* Increased height for mobile devices */
+.zoom-indicator-wrapper {
+    height: 20px; 
+}
+
+/* Font size based on viewport width for consistent readability */
+.zoom-percentage {
+    font-size: 2vw; 
+}
+
+.zoom-label {
+    font-size: 2vw;
+}
+
 }
