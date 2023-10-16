@@ -20,7 +20,8 @@
     font-family: 'lato', sans-serif;
 }
 
-html, body {
+html,
+body {
     height: 100vh;
 }
 
@@ -64,11 +65,13 @@ main {
     color: #3c74a8;
 }
 
-.sizes div:first-child, .indicator {
+.sizes div:first-child,
+.indicator {
     user-select: none;
 }
 
 .zoom-indicator-wrapper {
+    padding: 0 20px;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -80,7 +83,7 @@ main {
 
 .zoom-indicator-bar {
     height: 100%;
-    width: 100%;
+
     background-color: #3c74a8;
     transition: width 0.3s ease;
     position: relative;
@@ -94,16 +97,3 @@ main {
     color: #ffffff;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
-
-.zoom-label {
-    position: absolute;
-    top: -2.5vh; 
-    left: 0; 
-    background-color: #ffffff; 
-    color: #3c74a8; 
-    border-radius: 5px;
-    font-size: 1.5vw; 
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
-}
-
-

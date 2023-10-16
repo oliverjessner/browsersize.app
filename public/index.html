@@ -1,43 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>browsersize.app - how big is my browser window?</title>
-    <link rel="stylesheet" href="styles/style.css" type="text/css">
-    <link rel="stylesheet" href="styles/mobile.css" type="text/css">
-    <link rel="icon" href="/assets/images/logo.png">
-    <link rel="apple-touch-icon" href="/assets/images/logo.png">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="The size of your browser window">
-    <meta name="description" content="A simple yet astute way for developers and designers to discover the size of their browser window">
-    <meta property="og:description" content="A simple yet astute way for developers and designers to discover the size of their browser window">
-    <meta property="og:image" content="/assets/images/screenshot.webp">
-    <meta property="og:url" content="https://browsersize.app">
-    <meta name="twitter:card" content="summary_large_image">
-</head>
-<body>
-    <main>
-        <div class="dimensions">
-            <div class="sizes">
-                <div>width</div>
-                <div class="letters-numbers" id="width">0</div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>browsersize.app - how big is my browser window?</title>
+        <link rel="stylesheet" href="styles/style.css" type="text/css" />
+        <link rel="stylesheet" href="styles/mobile.css" type="text/css" />
+        <link rel="icon" href="/assets/images/logo.png" />
+        <link rel="apple-touch-icon" href="/assets/images/logo.png" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="The size of your browser window" />
+        <meta
+            name="description"
+            content="A simple yet astute way for developers and designers to discover the size of their browser window"
+        />
+        <meta
+            property="og:description"
+            content="A simple yet astute way for developers and designers to discover the size of their browser window"
+        />
+        <meta property="og:image" content="/assets/images/screenshot.webp" />
+        <meta property="og:url" content="https://browsersize.app" />
+        <meta name="twitter:card" content="summary_large_image" />
+    </head>
+    <body>
+        <main>
+            <div class="dimensions">
+                <div class="sizes">
+                    <div>width</div>
+                    <div class="letters-numbers" id="width">0</div>
+                </div>
+                <div class="x letters-numbers">x</div>
+                <div class="sizes">
+                    <div>height</div>
+                    <div class="letters-numbers" id="height">0</div>
+                </div>
             </div>
-            <div class="x letters-numbers">x</div>
-            <div class="sizes">
-                <div>height</div>
-                <div class="letters-numbers" id="height">0</div>
+            <div id="indicator" class="indicator">viewport</div>
+        </main>
+        <div class="zoom-indicator-wrapper">
+            <div class="zoom-indicator-bar">
+                <div class="zoom-percentage">Zoom <span>100%</span></div>
             </div>
         </div>
-        <div id="indicator" class="indicator">viewport</div>
-    </main>
-    <div class="zoom-indicator-wrapper">
-        <div class="zoom-label">Zoom</div>
-        <div class="zoom-indicator-bar">
-            <div class="zoom-percentage">100%</div>
-        </div>
-    </div>
-    <script src="logic.js" async></script>
-</body>
+        <script src="logic.js" async></script>
+    </body>
 </html>
-

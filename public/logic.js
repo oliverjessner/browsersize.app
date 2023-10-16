@@ -1,10 +1,10 @@
-// Selecting elements from the DOM
 const main = document.querySelector('main');
 const heightContainer = main.querySelector('#height');
 const widthContainer = main.querySelector('#width');
 const indicator = document.querySelector('#indicator');
 const zoomIndicatorBar = document.querySelector('.zoom-indicator-bar');
-const zoomPercentage = document.querySelector('.zoom-percentage');
+const zoomPercentage = document.querySelector('.zoom-percentage span');
+const zoomLevels = Object.freeze([500, 400, 300, 250, 200, 175, 150, 125, 110, 100, 90, 80, 75, 67, 50, 33, 25]);
 
 let isViewport = true;
 
@@ -15,27 +15,22 @@ function setSizes() {
     }
 }
 
-// Lookup-Table for zoom levels
-const zoomLevels = [];
-for (let i = 0; i <= 100; i++) {
-    zoomLevels.push(i);
-}
-
-// Function to find the closest zoom level from the lookup table
 function getClosestZoomLevel(zoom) {
-    return zoomLevels.reduce((prev, curr) =>
-        Math.abs(curr - zoom) < Math.abs(prev - zoom) ? curr : prev
-    );
+    return zoomLevels.reduce((prev, curr) => (Math.abs(curr - zoom) < Math.abs(prev - zoom) ? curr : prev));
 }
 
 function updateZoomIndicator() {
-    // Calculate the zoom level based on the window dimensions
     const zoom = (window.outerWidth / window.innerWidth) * 100;
     const closestZoomLevel = getClosestZoomLevel(zoom);
+    const zoomToShow = Math.min(closestZoomLevel, 500);
+    console.log(zoomToShow, zoom);
+    // stop growing at 100%
+    if (zoomToShow < 100) {
+        zoomIndicatorBar.style.width = `${zoomToShow}%`;
+    } else {
+        zoomIndicatorBar.style.width = '100%';
+    }
 
-    // Ensure the zoom level does not exceed 100%
-    const zoomToShow = Math.min(closestZoomLevel, 100);
-    zoomIndicatorBar.style.width = `${zoomToShow}%`;
     zoomPercentage.textContent = `${zoomToShow}%`;
 }
 
@@ -45,10 +40,8 @@ function toggleSize() {
 
     widthContainer.textContent = width;
     heightContainer.textContent = height;
-
     indicator.textContent = isViewport ? 'resolution' : 'viewport';
-
-    isViewport = !isViewport; 
+    isViewport = !isViewport;
 }
 
 setSizes();
@@ -56,7 +49,6 @@ updateZoomIndicator();
 
 window.addEventListener('resize', () => {
     setSizes();
-    updateZoomIndicator(); 
+    updateZoomIndicator();
 });
-
 main.addEventListener('click', toggleSize);
