@@ -4,12 +4,10 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>browsersize.app - how big is my browser window?</title>
-
         <link rel="stylesheet" href="styles/style.css" type="text/css" />
         <link rel="stylesheet" href="styles/mobile.css" type="text/css" />
         <link rel="icon" href="/assets/images/logo.png" />
         <link rel="apple-touch-icon" href="/assets/images/logo.png" />
-
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="The size of your browser window" />
         <meta
@@ -38,7 +36,12 @@
                 </div>
             </div>
             <div id="indicator" class="indicator">viewport</div>
-            <script src="logic.js" async></script>
         </main>
+        <div class="zoom-indicator-wrapper">
+            <div class="zoom-indicator-bar">
+                <div class="zoom-percentage">Zoom <span>100%</span></div>
+            </div>
+        </div>
+        <script src="logic.js" async></script>
     </body>
 </html>

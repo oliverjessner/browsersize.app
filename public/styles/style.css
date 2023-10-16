@@ -69,3 +69,31 @@ main {
 .indicator {
     user-select: none;
 }
+
+.zoom-indicator-wrapper {
+    padding: 0 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2vh;
+    background-color: #ddd;
+    z-index: 1000;
+}
+
+.zoom-indicator-bar {
+    height: 100%;
+
+    background-color: #3c74a8;
+    transition: width 0.3s ease;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.zoom-percentage {
+    font-size: 1vw;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}

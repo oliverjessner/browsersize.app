@@ -2,32 +2,53 @@ const main = document.querySelector('main');
 const heightContainer = main.querySelector('#height');
 const widthContainer = main.querySelector('#width');
 const indicator = document.querySelector('#indicator');
+const zoomIndicatorBar = document.querySelector('.zoom-indicator-bar');
+const zoomPercentage = document.querySelector('.zoom-percentage span');
+const zoomLevels = Object.freeze([500, 400, 300, 250, 200, 175, 150, 125, 110, 100, 90, 80, 75, 67, 50, 33, 25]);
 
 let isViewport = true;
 
 function setSizes() {
     if (isViewport) {
-        requestAnimationFrame(function () {
-            heightContainer.textContent = window.innerHeight;
-            widthContainer.textContent = window.innerWidth;
-        });
+        heightContainer.textContent = window.innerHeight;
+        widthContainer.textContent = window.innerWidth;
     }
 }
 
+function getClosestZoomLevel(zoom) {
+    return zoomLevels.reduce((prev, curr) => (Math.abs(curr - zoom) < Math.abs(prev - zoom) ? curr : prev));
+}
+
+function updateZoomIndicator() {
+    const zoom = (window.outerWidth / window.innerWidth) * 100;
+    const closestZoomLevel = getClosestZoomLevel(zoom);
+    const zoomToShow = Math.min(closestZoomLevel, 500);
+    console.log(zoomToShow, zoom);
+    // stop growing at 100%
+    if (zoomToShow < 100) {
+        zoomIndicatorBar.style.width = `${zoomToShow}%`;
+    } else {
+        zoomIndicatorBar.style.width = '100%';
+    }
+
+    zoomPercentage.textContent = `${zoomToShow}%`;
+}
+
 function toggleSize() {
-    requestAnimationFrame(function () {
-        const width = isViewport ? screen.width : window.innerWidth;
-        const height = isViewport ? screen.height : window.innerHeight;
+    const width = isViewport ? screen.width : window.innerWidth;
+    const height = isViewport ? screen.height : window.innerHeight;
 
-        widthContainer.textContent = width;
-        heightContainer.textContent = height;
-
-        indicator.textContent = isViewport ? 'resolution' : 'viewport';
-
-        isViewport = !isViewport;
-    });
+    widthContainer.textContent = width;
+    heightContainer.textContent = height;
+    indicator.textContent = isViewport ? 'resolution' : 'viewport';
+    isViewport = !isViewport;
 }
 
 setSizes();
-window.addEventListener('resize', setSizes);
+updateZoomIndicator();
+
+window.addEventListener('resize', () => {
+    setSizes();
+    updateZoomIndicator();
+});
 main.addEventListener('click', toggleSize);
