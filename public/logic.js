@@ -23,7 +23,7 @@ function updateZoomIndicator() {
     const zoom = (window.outerWidth / window.innerWidth) * 100;
     const closestZoomLevel = getClosestZoomLevel(zoom);
     const zoomToShow = Math.min(closestZoomLevel, 500);
-    console.log(zoomToShow, zoom);
+
     // stop growing at 100%
     if (zoomToShow < 100) {
         zoomIndicatorBar.style.width = `${zoomToShow}%`;
