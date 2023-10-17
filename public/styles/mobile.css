@@ -8,14 +8,6 @@
     }
 
     .zoom-indicator-wrapper {
-        height: 20px;
-    }
-
-    .zoom-percentage {
-        font-size: 2vw;
-    }
-
-    .zoom-label {
-        font-size: 2vw;
+        display: hidden;
     }
 }
