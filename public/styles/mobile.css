@@ -8,6 +8,6 @@
     }
 
     .zoom-indicator-wrapper {
-        display: hidden;
+        display: none;
     }
 }
