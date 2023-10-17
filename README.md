@@ -2,7 +2,7 @@
 
 Authors: Felicitas Tomke, Oliver Jessner
 
-Visits [browsersize.app](https://browsersize.app) and displays the size of your browser window.
+Visits [browsersize.app](https://browsersize.app) and displays the size of your browser window. Also tells you if your are zoomed in or out.
 
 ![](public/assets/images/screenshot.webp)
 
