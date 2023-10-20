@@ -21,7 +21,10 @@
         <meta property="og:image" content="/assets/images/screenshot.webp" />
         <meta property="og:url" content="https://browsersize.app" />
         <meta name="twitter:card" content="summary_large_image" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-CRKB24G58P"></script>
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-CRKB24G58P"
+        ></script>
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag() {
@@ -33,23 +36,25 @@
         </script>
     </head>
     <body>
-        <main>
-            <div class="dimensions">
-                <div class="sizes">
-                    <div>width</div>
-                    <div class="letters-numbers" id="width">0</div>
+        <div class="main-wrapper">
+            <main>
+                <div class="dimensions">
+                    <div class="sizes">
+                        <div>width</div>
+                        <div class="letters-numbers" id="width">0</div>
+                    </div>
+                    <div class="x letters-numbers">x</div>
+                    <div class="sizes">
+                        <div>height</div>
+                        <div class="letters-numbers" id="height">0</div>
+                    </div>
                 </div>
-                <div class="x letters-numbers">x</div>
-                <div class="sizes">
-                    <div>height</div>
-                    <div class="letters-numbers" id="height">0</div>
+                <div id="indicator" class="indicator">viewport</div>
+            </main>
+            <div class="zoom-indicator-wrapper">
+                <div class="zoom-indicator-bar">
+                    <div class="zoom-percentage">Zoom <span>100%</span></div>
                 </div>
-            </div>
-            <div id="indicator" class="indicator">viewport</div>
-        </main>
-        <div class="zoom-indicator-wrapper">
-            <div class="zoom-indicator-bar">
-                <div class="zoom-percentage">Zoom <span>100%</span></div>
             </div>
         </div>
         <script src="logic.js" async></script>
