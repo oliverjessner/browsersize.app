@@ -15,6 +15,7 @@
 * {
     --font-size-xy: 4vw;
     --font-size: calc(var(--font-size-xy) * 0.35);
+    --wrap-indicator: 2vw;
 
     padding: 0;
     margin: 0;
@@ -25,12 +26,6 @@
 html,
 body {
     height: 100vh;
-}
-
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 main {
@@ -73,14 +68,16 @@ main {
     user-select: none;
 }
 
+.main-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - var(--wrap-indicator));
+}
+
 .zoom-indicator-wrapper {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2vh;
+    height: var(--wrap-indicator);
     background-color: #ddd;
-    z-index: 1000;
 }
 
 .zoom-indicator-bar {
@@ -95,7 +92,7 @@ main {
 }
 
 .zoom-percentage {
-    font-size: 1vw;
+    font-size: calc(var(--wrap-indicator) * 0.5);
     color: #ffffff;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
