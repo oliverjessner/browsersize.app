@@ -27,12 +27,19 @@ html,
 body {
     height: 100vh;
 }
+body {
+    overflow:hidden;
+}
+
+img.cursor {
+    width:1vw;
+    height:1vw;
+}
 
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    cursor: pointer;
 }
 
 .dimensions {
@@ -95,4 +102,14 @@ main {
     font-size: calc(var(--wrap-indicator) * 0.5);
     color: #ffffff;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+main:focus,
+main:focus-within,
+main:active {
+    outline: none; 
+    position: fixed;
+    box-shadow: 0 0 0 0.3vw rgba(60, 116, 168, 0.8); 
+    visibility: visible;
+    border: 0.5vw solid transparent;
 }

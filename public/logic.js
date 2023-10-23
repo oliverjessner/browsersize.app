@@ -14,6 +14,28 @@ function setSizes() {
         widthContainer.textContent = window.innerWidth;
     }
 }
+document.addEventListener('keydown', handleKeyboardEvent);
+
+let isHoverState = false;  // A flag to keep track of the current state
+
+function handleKeyboardEvent(event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        toggleSize();
+        toggleCursor();
+        console.log('Enter or Space pressed')
+    }
+}
+
+function toggleCursor() {
+    const cursorImg = document.querySelector('.cursor');
+    if (isHoverState) {
+        cursorImg.src = 'assets/fontawesome/mouse.svg';  
+    } else {
+        cursorImg.src = 'assets/fontawesome/mouse-hover.svg';  
+    }
+    isHoverState = !isHoverState;  // Toggle the state flag
+}
 
 function getClosestZoomLevel(zoom) {
     return zoomLevels.reduce((prev, curr) => (Math.abs(curr - zoom) < Math.abs(prev - zoom) ? curr : prev));
@@ -24,7 +46,7 @@ function updateZoomIndicator() {
     const closestZoomLevel = getClosestZoomLevel(zoom);
     const zoomToShow = Math.min(closestZoomLevel, 500);
 
-    // stop growing at 100%
+    
     if (zoomToShow < 100) {
         zoomIndicatorBar.style.width = `${zoomToShow}%`;
     } else {
@@ -52,3 +74,17 @@ window.addEventListener('resize', () => {
     updateZoomIndicator();
 });
 main.addEventListener('click', toggleSize);
+
+const cursorImg = document.querySelector('.cursor');
+
+document.getElementById('indicator').addEventListener('mouseover', () => {
+    cursorImg.src = 'assets/fontawesome/mouse-hover.svg';  
+});
+
+document.getElementById('indicator').addEventListener('mouseout', () => {
+    cursorImg.src = 'assets/fontawesome/mouse.svg';  
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    main.focus();
+});
