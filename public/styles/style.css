@@ -61,7 +61,9 @@ main {
 }
 
 .indicator {
-    text-align: center;
+    display: flex;
+    align-items: center;    
+    gap: 0.5vw;
     font-size: var(--font-size);
 }
 
@@ -116,10 +118,12 @@ main:active {
 
 .cursor {
     background-image: url('/assets/fontawesome/mouse.svg');
-    height: 15px;
-    width: 15px;
+    height: 1.2vw; 
+    width: 1.2vw;  
     background-repeat: no-repeat;
+    background-size: contain;
 }
+
 .indicator:hover .cursor {
     background-image: url('/assets/fontawesome/mouse-hover.svg');
 }
