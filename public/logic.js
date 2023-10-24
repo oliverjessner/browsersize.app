@@ -56,7 +56,7 @@ function setInitialState() {
 }
 
 document.addEventListener('keydown', handleKeyboardEvent);
-window.addEventListener('resize', () => setInitialState());
+window.addEventListener('resize', setInitialState);
 main.addEventListener('click', toggleSize);
-document.addEventListener('DOMContentLoaded', () => main.focus());
+document.addEventListener('DOMContentLoaded', main.focus);
 setInitialState();

@@ -1,22 +1,28 @@
 @font-face {
-    font-family: 'Lato';
+    font-family: 'lato';
     src: url('/assets/fonts/Lato-Latin.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Lato';
+    font-family: 'lato';
     src: url('/assets/fonts/Lato-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
 }
 
-* {
+:root {
     --font-size-xy: 4vw;
     --font-size: calc(var(--font-size-xy) * 0.35);
     --wrap-indicator: 2vw;
+    --dominated-color: #3c74a8;
+    --zoom-color: #ffffff;
+    --zoom-indicator-background: #ddd;
+}
 
+/* Only put resets here and css vars in :root */
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -27,14 +33,12 @@ html,
 body {
     height: 100vh;
 }
-body {
-    overflow: hidden;
-}
 
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
 }
 
 .dimensions {
@@ -61,14 +65,14 @@ main {
     gap: 0.5vw;
 }
 
-.indicator:hover {
-    color: #3c74a8;
-}
-
 .sizes div:first-child,
 .indicator {
     font-size: var(--font-size);
     user-select: none;
+}
+
+.indicator:hover {
+    color: var(--dominated-color);
 }
 
 .main-wrapper {
@@ -80,13 +84,13 @@ main {
 
 .zoom-indicator-wrapper {
     height: var(--wrap-indicator);
-    background-color: #ddd;
+    background-color: var(--zoom-indicator-background);
 }
 
 .zoom-indicator-bar {
     height: 100%;
 
-    background-color: #3c74a8;
+    background-color: var(--dominated-color);
     transition: width 0.3s ease;
     display: flex;
     justify-content: center;
@@ -95,7 +99,7 @@ main {
 
 .zoom-percentage {
     font-size: calc(var(--wrap-indicator) * 0.5);
-    color: #ffffff;
+    color: var(--zoom-color);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
@@ -103,9 +107,7 @@ main:focus,
 main:focus-within,
 main:active {
     outline: none;
-    position: fixed;
     box-shadow: 0 0 0 0.3vw rgba(60, 116, 168, 0.8);
-    visibility: visible;
     border: 0.5vw solid transparent;
 }
 
