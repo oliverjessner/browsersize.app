@@ -3,7 +3,7 @@ const heightContainer = main.querySelector('#height');
 const widthContainer = main.querySelector('#width');
 const indicator = document.querySelector('#indicator');
 const zoomIndicatorBar = document.querySelector('.zoom-indicator-bar');
-const zoomPercentage = document.querySelector('.zoom-percentage span');
+const zoomPercentage = zoomIndicatorBar.querySelector('.zoom-percentage span:nth-child(2)');
 const zoomLevels = Object.freeze([500, 400, 300, 250, 200, 175, 150, 125, 110, 100, 90, 80, 75, 67, 50, 33, 25]);
 
 let isViewport = true;
@@ -19,7 +19,6 @@ function handleKeyboardEvent(event) {
     if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();
         toggleSize();
-        console.log('Enter or Space pressed');
     }
 }
 
@@ -51,15 +50,13 @@ function toggleSize() {
     isViewport = !isViewport;
 }
 
-setSizes();
-updateZoomIndicator();
-
-document.addEventListener('keydown', handleKeyboardEvent);
-window.addEventListener('resize', () => {
+function setInitialState() {
     setSizes();
     updateZoomIndicator();
-});
+}
+
+document.addEventListener('keydown', handleKeyboardEvent);
+window.addEventListener('resize', () => setInitialState());
 main.addEventListener('click', toggleSize);
-document.addEventListener('DOMContentLoaded', function () {
-    main.focus();
-});
+document.addEventListener('DOMContentLoaded', () => main.focus());
+setInitialState();
