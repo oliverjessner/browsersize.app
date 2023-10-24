@@ -28,12 +28,12 @@ body {
     height: 100vh;
 }
 body {
-    overflow:hidden;
+    overflow: hidden;
 }
 
 img.cursor {
-    width:1vw;
-    height:1vw;
+    width: 1vw;
+    height: 1vw;
 }
 
 main {
@@ -62,7 +62,7 @@ main {
 
 .indicator {
     display: flex;
-    align-items: center;    
+    align-items: center;
     gap: 0.5vw;
     font-size: var(--font-size);
 }
@@ -109,17 +109,19 @@ main {
 main:focus,
 main:focus-within,
 main:active {
-    outline: none; 
+    outline: none;
     position: fixed;
-    box-shadow: 0 0 0 0.3vw rgba(60, 116, 168, 0.8); 
+    box-shadow: 0 0 0 0.3vw rgba(60, 116, 168, 0.8);
     visibility: visible;
     border: 0.5vw solid transparent;
 }
 
 .cursor {
+    --icon-size: calc(var(--font-size-xy) * 0.25);
+
     background-image: url('/assets/fontawesome/mouse.svg');
-    height: calc(var(--font-size-xy) * 0.42);
-    width: calc(var(--font-size-xy) * 0.42); 
+    height: var(--icon-size);
+    width: var(--icon-size);
     background-repeat: no-repeat;
     background-size: contain;
 }
