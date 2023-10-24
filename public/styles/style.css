@@ -1,3 +1,12 @@
+:root {
+    --font-size-xy: 4vw;
+    --font-size: calc(var(--font-size-xy) * 0.35);
+    --wrap-indicator: 2vw;
+    --dominated-color: #3c74a8;
+    --zoom-color: #ffffff;
+    --zoom-indicator-background: #ddd;
+}
+
 @font-face {
     font-family: 'lato';
     src: url('/assets/fonts/Lato-Latin.woff2') format('woff2');
@@ -10,15 +19,6 @@
     src: url('/assets/fonts/Lato-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
-}
-
-:root {
-    --font-size-xy: 4vw;
-    --font-size: calc(var(--font-size-xy) * 0.35);
-    --wrap-indicator: 2vw;
-    --dominated-color: #3c74a8;
-    --zoom-color: #ffffff;
-    --zoom-indicator-background: #ddd;
 }
 
 /* Only put resets here and css vars in :root */
