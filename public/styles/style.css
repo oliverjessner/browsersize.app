@@ -115,11 +115,11 @@ main:active {
 }
 
 .cursor {
-    background-image: url('assets/fontawesome/mouse.svg');
+    background-image: url('/assets/fontawesome/mouse.svg');
     height: 15px;
     width: 15px;
     background-repeat: no-repeat;
 }
 .indicator:hover .cursor {
-    background-image: url('assets/fontawesome/mouse-hover.svg');
+    background-image: url('/assets/fontawesome/mouse-hover.svg');
 }
