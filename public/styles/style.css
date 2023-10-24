@@ -114,7 +114,7 @@ main:active {
 .cursor {
     --icon-size: calc(var(--font-size-xy) * 0.25);
 
-    background-image: url('/assets/fontawesome/mouse.svg');
+    background-image: url('/assets/images/mouse.svg');
     height: var(--icon-size);
     width: var(--icon-size);
     background-repeat: no-repeat;
@@ -122,5 +122,5 @@ main:active {
 }
 
 .indicator:hover .cursor {
-    background-image: url('/assets/fontawesome/mouse-hover.svg');
+    background-image: url('/assets/images/mouse-hover.svg');
 }
