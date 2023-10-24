@@ -3,6 +3,7 @@
     body {
         height: 100dvh;
     }
+
     * {
         --font-size-xy: 8vw;
     }
