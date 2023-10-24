@@ -15,6 +15,14 @@ function setSizes() {
     }
 }
 
+function handleKeyboardEvent(event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        toggleSize();
+        console.log('Enter or Space pressed');
+    }
+}
+
 function getClosestZoomLevel(zoom) {
     return zoomLevels.reduce((prev, curr) => (Math.abs(curr - zoom) < Math.abs(prev - zoom) ? curr : prev));
 }
@@ -24,7 +32,6 @@ function updateZoomIndicator() {
     const closestZoomLevel = getClosestZoomLevel(zoom);
     const zoomToShow = Math.min(closestZoomLevel, 500);
 
-    // stop growing at 100%
     if (zoomToShow < 100) {
         zoomIndicatorBar.style.width = `${zoomToShow}%`;
     } else {
@@ -47,8 +54,12 @@ function toggleSize() {
 setSizes();
 updateZoomIndicator();
 
+document.addEventListener('keydown', handleKeyboardEvent);
 window.addEventListener('resize', () => {
     setSizes();
     updateZoomIndicator();
 });
 main.addEventListener('click', toggleSize);
+document.addEventListener('DOMContentLoaded', function () {
+    main.focus();
+});

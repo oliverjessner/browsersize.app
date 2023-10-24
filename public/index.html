@@ -34,7 +34,7 @@
     </head>
     <body>
         <div class="main-wrapper">
-            <main>
+            <main tabindex="0">
                 <div class="dimensions">
                     <div class="sizes">
                         <div>width</div>
@@ -46,7 +46,10 @@
                         <div class="letters-numbers" id="height">0</div>
                     </div>
                 </div>
-                <div id="indicator" class="indicator">viewport</div>
+                <div class="indicator">
+                    <span id="indicator">viewport</span>
+                    <span class="cursor"></span>
+                </div>
             </main>
         </div>
         <div class="zoom-indicator-wrapper">
