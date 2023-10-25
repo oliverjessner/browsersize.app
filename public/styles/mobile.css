@@ -5,7 +5,8 @@
     }
 
     * {
-        --font-size-xy: 8vw;
+        --font-size-xy: 8vh;
+        --font-size: calc(var(--font-size-xy) * 0.35);
     }
 
     .zoom-indicator-wrapper {
