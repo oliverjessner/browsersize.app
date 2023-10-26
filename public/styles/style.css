@@ -113,7 +113,6 @@ main:active {
 
 .cursor {
     --icon-size: calc(var(--font-size-xy) * 0.25);
-
     background-image: url('/assets/images/mouse.svg');
     height: var(--icon-size);
     width: var(--icon-size);

@@ -6,6 +6,7 @@
         <title>browsersize.app - how big is my browser window?</title>
         <link rel="stylesheet" href="styles/style.css" type="text/css" />
         <link rel="stylesheet" href="styles/mobile.css" type="text/css" />
+        <link rel="stylesheet" href="styles/darkmode.css">
         <link rel="icon" href="/assets/images/logo.png" />
         <link rel="apple-touch-icon" href="/assets/images/logo.png" />
         <meta name="robots" content="index, follow" />
@@ -57,6 +58,10 @@
                 <div class="zoom-percentage"><span>Zoom</span> <span>100%</span></div>
             </div>
         </div>
+        <button id="theme-button" style="position: fixed; bottom: 1rem; right: 1rem; z-index: 9999;">
+            <span id="theme-icon">🌗</span> 
+        </button>
         <script src="logic.js" async></script>
+        <script src="darkmode.js"></script>
     </body>
 </html>

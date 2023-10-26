@@ -1,0 +1,53 @@
+:root {
+    --color-background-light: #ffffff;
+    --color-background-dark: #121212;
+    --color-text-light: #000000;
+    --color-text-dark: #ffffff;
+}
+
+[data-theme="light"] {
+    --color-background: var(--color-background-light);
+    --color-text: var(--color-text-light);
+    --button-background: #100f2c; 
+}
+
+[data-theme="dark"] {
+    --color-background: var(--color-background-dark);
+    --color-text: var(--color-text-dark);
+    --button-background: #ffffff; 
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+#theme-button {
+    background-color: var(--button-background); 
+    width: 3rem; 
+    height: 3rem; 
+    position: fixed;
+    top: 1em; 
+    right: 1em; 
+    border-radius: 50%; 
+    border: none; 
+    cursor: pointer;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease; 
+}
+
+#theme-button:hover {
+    background-color: #e1e1e1; 
+}
+
+[data-theme="light"] #theme-button:hover {
+    background-color: #100f2c; 
+}
+
+[data-theme="dark"] #theme-button:hover {
+    background-color: #e1e1e1; 
+}
+
