@@ -32,6 +32,16 @@
 html,
 body {
     height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.inner-body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
 }
 
 main {
@@ -42,6 +52,7 @@ main {
 }
 
 .dimensions {
+    position: relative;
     display: flex;
     gap: 1vw;
     align-items: center;
@@ -72,7 +83,7 @@ main {
 }
 
 .indicator:hover {
-    color: var(--dominated-color);
+    color: rgb(168, 116, 60);
 }
 
 .main-wrapper {
@@ -89,7 +100,6 @@ main {
 
 .zoom-indicator-bar {
     height: 100%;
-
     background-color: var(--dominated-color);
     transition: width 0.3s ease;
     display: flex;
@@ -107,7 +117,7 @@ main:focus,
 main:focus-within,
 main:active {
     outline: none;
-    box-shadow: 0 0 0 0.3vw rgba(60, 116, 168, 0.8);
+    box-shadow: 0 0 0 0.3vw rgba(168, 116, 60, 0.8);
     border: 0.5vw solid transparent;
 }
 
@@ -121,5 +131,5 @@ main:active {
 }
 
 .indicator:hover .cursor {
-    background-image: url('/assets/images/mouse-hover.svg');
+    background-image: url('/assets/images/mouse-hover-light.svg');
 }

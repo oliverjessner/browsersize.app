@@ -1,53 +1,121 @@
-:root {
-    --color-background-light: #ffffff;
-    --color-background-dark: #121212;
-    --color-text-light: #000000;
-    --color-text-dark: #ffffff;
-}
-
-[data-theme="light"] {
-    --color-background: var(--color-background-light);
-    --color-text: var(--color-text-light);
-    --button-background: #100f2c; 
-}
-
-[data-theme="dark"] {
-    --color-background: var(--color-background-dark);
-    --color-text: var(--color-text-dark);
-    --button-background: #ffffff; 
-}
-
+html,
 body {
-    background-color: var(--color-background);
-    color: var(--color-text);
-    transition: background-color 0.3s ease, color 0.3s ease; 
+     height: 100vh;
+     width: 100vw;
+     overflow: hidden;
+     background-color: #fff;
 }
 
-#theme-button {
-    background-color: var(--button-background); 
-    width: 3rem; 
-    height: 3rem; 
-    position: fixed;
-    top: 1em; 
-    right: 1em; 
-    border-radius: 50%; 
-    border: none; 
-    cursor: pointer;
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s ease; 
+.inner-body {
+     height: 100vh;
+     width: 100vw;
+     overflow: hidden;
+     position: relative;
 }
 
-#theme-button:hover {
-    background-color: #e1e1e1; 
+.theme-button-container {
+     position: fixed;
+     top: 2vh;
+     right: 2vh;
+     z-index: 9999;
 }
 
-[data-theme="light"] #theme-button:hover {
-    background-color: #100f2c; 
+.theme-button {
+     background-color: var(--button-background);
+     width: 5vh;
+     height: 5vh;
+     border-radius: 50%;
+     border: none;
+     cursor: pointer;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     transition: background-color 0.3s ease;
 }
 
-[data-theme="dark"] #theme-button:hover {
-    background-color: #e1e1e1; 
+.theme-button:hover {
+     background-color: #e1e1e1;
 }
 
+[data-theme="light"] .theme-button:hover {
+     background-color: #100f2c;
+}
+
+.theme-icon {
+     font-size: 3vh;
+     display: inline-block;
+}
+
+main {
+     z-index: 2;
+     color: #fff;
+     mix-blend-mode: difference;
+}
+
+.zoom-indicator-wrapper {
+     position: relative;
+     z-index: 100000000;
+}
+
+.cursor {
+     mix-blend-mode: normal !important;
+     background-color: #000;
+}
+
+.dark-mode-container {
+     position: absolute;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     right: 2vh;
+     top: 2vh;
+     width: 5vh;
+     height: 5vh;
+}
+
+.dark-mode-container .dark-mode {
+     position: relative;
+     transform: scale(0);
+     left: 0;
+     right: 0;
+     top: 0;
+     bottom: 0;
+     width: 0;
+     height: 0;
+     border-radius: 50%;
+     background-color: #100f2c;
+     transition: 1000ms ease-in-out;
+     display: flex;
+     flex: 0 0 auto;
+     width: 300vw;
+     height: 300vw;
+}
+
+[data-theme="dark"] .dark-mode-container .dark-mode {
+     transform: scale(1);
+     transition: 1000ms ease-in-out;
+}
+
+[data-theme="dark"] main:focus,
+[data-theme="dark"] main:focus-within,
+[data-theme="dark"] main:active {
+     outline: none;
+     box-shadow: 0 0 0 0.3vw rgba(60, 116, 168, 0.8);
+     border: 0.5vw solid transparent;
+}
+
+[data-theme="dark"] .indicator:hover {
+     color: rgb(60, 116, 168);
+}
+
+[data-theme="dark"] .indicator:hover .cursor {
+     background-image: url("/assets/images/mouse-hover.svg");
+}
+
+[data-theme='light'] {
+    --button-background: #100f2c;
+}
+
+[data-theme='dark'] {
+    --button-background: #ffffff;
+}
