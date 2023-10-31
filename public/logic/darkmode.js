@@ -6,7 +6,6 @@
     function setTheme(theme) {
         body.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
-        themeIcon.textContent = theme === 'dark' ? '🌞' : '🌗';
     }
 
     function toggleTheme() {
@@ -16,11 +15,12 @@
         return setTheme(newTheme);
     }
 
-    function initializeTheme() {
-        const savedTheme =
-            localStorage.getItem('theme') ||
-            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    function matchColorScheme() {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
 
+    function initializeTheme() {
+        const savedTheme = localStorage.getItem('theme') || matchColorScheme();
         return setTheme(savedTheme);
     }
 

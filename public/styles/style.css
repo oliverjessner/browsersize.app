@@ -131,3 +131,7 @@ main:active {
 .indicator:hover .cursor {
     background-image: var(--cursor-image-hover);
 }
+
+.theme-icon:before {
+    content: var(--button-content);
+}

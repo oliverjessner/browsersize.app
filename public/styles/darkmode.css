@@ -5,6 +5,7 @@
     --button-hover: #100f2c;
 
     --cursor-image: url('/assets/images/mouse-black.svg');
+    --button-content: '🌞';
 }
 
 [data-theme='dark'] {
@@ -14,4 +15,5 @@
     --button-hover: #e1e1e1;
 
     --cursor-image: url('/assets/images/mouse-white.svg');
+    --button-content: '🌗';
 }
