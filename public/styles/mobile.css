@@ -1,7 +1,7 @@
 @media (hover: none) {
     html,
     body {
-        height: 100vh;
+        height: 100dvh;
     }
 
     * {
@@ -11,10 +11,5 @@
 
     .zoom-indicator-wrapper {
         display: none;
-    }
-
-    .dark-mode-container .dark-mode {
-        height: 300vh;
-        width: 300vh;
     }
 }

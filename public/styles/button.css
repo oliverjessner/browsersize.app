@@ -1,0 +1,45 @@
+:root {
+    --button-background-light: #100f2c;
+    --button-background-dark: #ffffff;
+    --button-hover-light: #100f2c;
+    --button-hover-dark: #e1e1e1;
+}
+
+[data-theme='light'] {
+    --button-background: var(--button-background-light);
+    --button-hover: var(--button-hover-light);
+}
+
+[data-theme='dark'] {
+    --button-background: var(--button-background-dark);
+    --button-hover: var(--button-hover-dark);
+}
+
+.theme-button-container {
+    position: fixed;
+    top: 2vh;
+    right: 2vh;
+    z-index: 9999;
+}
+
+.theme-button {
+    background-color: var(--button-background);
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.theme-button:hover {
+    background-color: var(--button-hover);
+}
+
+.theme-icon {
+    font-size: 3vh;
+    display: inline-block;
+}

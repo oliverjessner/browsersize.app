@@ -83,7 +83,7 @@ main {
 }
 
 .indicator:hover {
-    color: rgb(168, 116, 60);
+    color: var(--dominated-color);
 }
 
 .main-wrapper {
@@ -117,9 +117,10 @@ main:focus,
 main:focus-within,
 main:active {
     outline: none;
-    box-shadow: 0 0 0 0.3vw rgba(168, 116, 60, 0.8);
-    border: 0.5vw solid transparent;
+    box-shadow: 0 0 0 0.3vw var(--dominated-color); 
+    border: 0.5vw solid transparent; 
 }
+    
 
 .cursor {
     --icon-size: calc(var(--font-size-xy) * 0.25);
@@ -131,5 +132,5 @@ main:active {
 }
 
 .indicator:hover .cursor {
-    background-image: url('/assets/images/mouse-hover-light.svg');
+    background-image: url('/assets/images/mouse-hover.svg');
 }
