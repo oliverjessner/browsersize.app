@@ -1,19 +1,20 @@
 @media (hover: none) {
     html,
     body {
-         height: 100vh;
+        height: 100vh;
     }
 
     * {
-         --font-size-xy: 8vw;
+        --font-size-xy: 8vh;
+        --font-size: calc(var(--font-size-xy) * 0.35);
     }
 
     .zoom-indicator-wrapper {
-         display: none;
+        display: none;
     }
 
     .dark-mode-container .dark-mode {
-         height: 300vh;
-         width: 300vh;
+        height: 300vh;
+        width: 300vh;
     }
 }

@@ -18,7 +18,7 @@ function setSizes() {
 function handleKeyboardEvent(event) {
     if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();
-        toggleSize();
+        return toggleSize();
     }
 }
 
@@ -52,7 +52,7 @@ function toggleSize() {
 
 function setInitialState() {
     setSizes();
-    updateZoomIndicator();
+    return updateZoomIndicator();
 }
 
 document.addEventListener('keydown', handleKeyboardEvent);
