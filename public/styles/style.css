@@ -2,9 +2,12 @@
     --font-size-xy: 4vw;
     --font-size: calc(var(--font-size-xy) * 0.35);
     --wrap-indicator: 2vw;
+
     --dominated-color: #3c74a8;
     --zoom-color: #ffffff;
     --zoom-indicator-background: #ddd;
+
+    --cursor-image-hover: url('/assets/images/mouse-hover.svg');
 }
 
 @font-face {
@@ -32,6 +35,11 @@
 html,
 body {
     height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 main {
@@ -41,7 +49,16 @@ main {
     cursor: pointer;
 }
 
+main:focus,
+main:focus-within,
+main:active {
+    outline: none;
+    box-shadow: 0 0 0 0.3vw var(--dominated-color);
+    border: 0.5vw solid transparent;
+}
+
 .dimensions {
+    position: relative;
     display: flex;
     gap: 1vw;
     align-items: center;
@@ -89,7 +106,6 @@ main {
 
 .zoom-indicator-bar {
     height: 100%;
-
     background-color: var(--dominated-color);
     transition: width 0.3s ease;
     display: flex;
@@ -103,18 +119,9 @@ main {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
-main:focus,
-main:focus-within,
-main:active {
-    outline: none;
-    box-shadow: 0 0 0 0.3vw rgba(60, 116, 168, 0.8);
-    border: 0.5vw solid transparent;
-}
-
 .cursor {
     --icon-size: calc(var(--font-size-xy) * 0.25);
-
-    background-image: url('/assets/images/mouse.svg');
+    background-image: var(--cursor-image);
     height: var(--icon-size);
     width: var(--icon-size);
     background-repeat: no-repeat;
@@ -122,5 +129,9 @@ main:active {
 }
 
 .indicator:hover .cursor {
-    background-image: url('/assets/images/mouse-hover.svg');
+    background-image: var(--cursor-image-hover);
+}
+
+.theme-icon:before {
+    content: var(--button-content);
 }

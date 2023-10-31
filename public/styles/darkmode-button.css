@@ -1,0 +1,28 @@
+.theme-button-container {
+    position: fixed;
+    top: 2vh;
+    right: 2vh;
+    z-index: 9999;
+}
+
+.theme-button {
+    background-color: var(--button-background);
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.theme-button:hover {
+    background-color: var(--button-hover);
+}
+
+.theme-icon {
+    font-size: 3vh;
+    display: inline-block;
+}

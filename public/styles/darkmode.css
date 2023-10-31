@@ -1,0 +1,19 @@
+[data-theme='light'] {
+    --color-background: #ffffff;
+    --color-text: #000000;
+    --button-background: #100f2c;
+    --button-hover: #100f2c;
+
+    --cursor-image: url('/assets/images/mouse-black.svg');
+    --button-content: '🌞';
+}
+
+[data-theme='dark'] {
+    --color-background: #121212;
+    --color-text: #ffffff;
+    --button-background: #ffffff;
+    --button-hover: #e1e1e1;
+
+    --cursor-image: url('/assets/images/mouse-white.svg');
+    --button-content: '🌗';
+}
