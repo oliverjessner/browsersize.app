@@ -1,40 +1,17 @@
-:root {
-     --color-background-light: #ffffff;
-     --color-background-dark: #121212;
-     --color-text-light: #000000;
-     --color-text-dark: #ffffff;
- 
-     --cursor-image-dark: url('/assets/images/mouse-white.svg');
-     --cursor-image-hover-dark: url('/assets/images/mouse-hover.svg');
-     --cursor-image-light: url('/assets/images/mouse.svg');
-     --cursor-image-hover-light: url('/assets/images/mouse-hover.svg');
- }
- 
- [data-theme='light'] {
-     --color-background: var(--color-background-light);
-     --color-text: var(--color-text-light);
-     --cursor-image: var(--cursor-image-light);
-     --cursor-image-hover: var(--cursor-image-hover-light);
- }
- 
- [data-theme='dark'] {
-     --color-background: var(--color-background-dark);
-     --color-text: var(--color-text-dark);
-     --cursor-image: var(--cursor-image-dark);
-     --cursor-image-hover: var(--cursor-image-hover-dark);
- }
- 
- body {
-     background-color: var(--color-background);
-     color: var(--color-text);
-     transition: background-color 0.3s ease, color 0.3s ease;
- }
- 
- .cursor {
-     background-image: var(--cursor-image);
- }
- 
- .indicator:hover .cursor {
-     background-image: var(--cursor-image-hover);
- }
- 
+[data-theme='light'] {
+    --color-background: #ffffff;
+    --color-text: #000000;
+    --button-background: #100f2c;
+    --button-hover: #100f2c;
+
+    --cursor-image: url('/assets/images/mouse-black.svg');
+}
+
+[data-theme='dark'] {
+    --color-background: #121212;
+    --color-text: #ffffff;
+    --button-background: #ffffff;
+    --button-hover: #e1e1e1;
+
+    --cursor-image: url('/assets/images/mouse-white.svg');
+}

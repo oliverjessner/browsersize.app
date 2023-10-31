@@ -1,20 +1,3 @@
-:root {
-    --button-background-light: #100f2c;
-    --button-background-dark: #ffffff;
-    --button-hover-light: #100f2c;
-    --button-hover-dark: #e1e1e1;
-}
-
-[data-theme='light'] {
-    --button-background: var(--button-background-light);
-    --button-hover: var(--button-hover-light);
-}
-
-[data-theme='dark'] {
-    --button-background: var(--button-background-dark);
-    --button-hover: var(--button-hover-dark);
-}
-
 .theme-button-container {
     position: fixed;
     top: 2vh;
