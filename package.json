@@ -6,13 +6,15 @@
         "bun-types": "latest"
     },
     "scripts": {
-        "staging": "bun --hot run index.ts"
+        "staging": "bun --hot run index.ts",
+        "build": "rollup --config"
     },
     "version": "0.5.0",
     "peerDependencies": {
         "typescript": "^5.0.0"
     },
     "dependencies": {
+        "@rollup/plugin-terser": "^0.4.4",
         "hono": "^3.6.0"
     }
 }
