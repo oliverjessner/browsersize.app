@@ -1,5 +1,4 @@
 const body = document.body;
-const themeIcon = document.querySelector('.theme-icon');
 const themeButton = document.querySelector('.theme-button');
 
 function setTheme(theme) {
@@ -24,4 +23,3 @@ function initializeTheme() {
 
 themeButton.addEventListener('click', toggleTheme);
 document.addEventListener('DOMContentLoaded', initializeTheme);
-

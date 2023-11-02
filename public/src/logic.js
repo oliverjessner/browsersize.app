@@ -1,5 +1,3 @@
-import { setTheme, toggleTheme, matchColorScheme, initializeTheme } from './darkmode.js';
-
 const main = document.querySelector('main');
 const heightContainer = main.querySelector('#height');
 const widthContainer = main.querySelector('#width');
