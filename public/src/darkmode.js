@@ -16,10 +16,9 @@ function matchColorScheme() {
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 }
 
-function initializeTheme() {
+export default function initializeTheme() {
     const savedTheme = localStorage.getItem('theme') || matchColorScheme();
     return setTheme(savedTheme);
 }
 
 themeButton.addEventListener('click', toggleTheme);
-document.addEventListener('DOMContentLoaded', initializeTheme);

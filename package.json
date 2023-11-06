@@ -6,7 +6,8 @@
         "bun-types": "latest"
     },
     "scripts": {
-        "staging": "bun --hot run index.ts",
+        "staging": "bun --hot run index.ts --staging",
+        "production": "bun run index.ts",
         "build": "rollup --config"
     },
     "version": "0.5.0",
@@ -15,6 +16,7 @@
     },
     "dependencies": {
         "@rollup/plugin-terser": "^0.4.4",
-        "hono": "^3.6.0"
+        "hono": "^3.6.0",
+        "rollup-plugin-generate-html-template": "^1.7.0"
     }
 }
