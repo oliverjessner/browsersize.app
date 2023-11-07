@@ -1,5 +1,7 @@
 import terser from '@rollup/plugin-terser';
 import htmlTemplate from 'rollup-plugin-generate-html-template';
+import { minify } from 'html-minifier';
+import fs from 'fs'; // import 'fs' module to read and write files
 
 const staging = {
     file: './public/dist/bundle.js',
@@ -16,10 +18,6 @@ const production = {
     format: 'iife',
     plugins: [
         terser(),
-        htmlTemplate({
-            template: './public/html/home_template.html',
-            target: './public/index.html',
-        }),
     ],
 };
 
@@ -27,3 +25,14 @@ export default {
     input: './public/src/logic.js',
     output: [staging, production],
 };
+
+// minify the HTML file separately
+(async () => {
+    const outputHtmlFile = './public/index.html';
+    const html = await fs.promises.readFile(outputHtmlFile, 'utf-8');
+    const minifiedHtml = minify(html, {
+        collapseWhitespace: true,
+        removeComments: true,
+    });
+    await fs.promises.writeFile(outputHtmlFile, minifiedHtml, 'utf-8');
+})();
