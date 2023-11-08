@@ -1,7 +1,5 @@
 import terser from '@rollup/plugin-terser';
 import htmlTemplate from 'rollup-plugin-generate-html-template';
-import { minify } from 'html-minifier';
-import fs from 'fs'; // import 'fs' module to read and write files
 
 const staging = {
     file: './public/dist/bundle.js',
@@ -26,13 +24,4 @@ export default {
     output: [staging, production],
 };
 
-// minify the HTML file separately
-(async () => {
-    const outputHtmlFile = './public/index.html';
-    const html = await fs.promises.readFile(outputHtmlFile, 'utf-8');
-    const minifiedHtml = minify(html, {
-        collapseWhitespace: true,
-        removeComments: true,
-    });
-    await fs.promises.writeFile(outputHtmlFile, minifiedHtml, 'utf-8');
-})();
+import './scripts/minify-html.js';
