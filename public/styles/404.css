@@ -1,0 +1,82 @@
+:root {
+    --primary-color: #000;
+    --secondary-color: #fff;
+    --accent-color: #3c74a8;
+}
+
+@font-face {
+    font-family: 'lato';
+    src: url('/assets/fonts/Lato-Latin.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('/public/assets/fonts/Lato-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'lato', sans-serif;
+}
+
+body,
+html {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Lato', sans-serif; 
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    text-align: center;
+}
+
+.error-container {
+    max-width: 60vw;
+    margin: 0 auto;
+}
+
+.error-code {
+    font-size: 15vw;
+    font-weight: bold;
+}
+
+.zero {
+    color: var(--accent-color);
+}
+
+.error-message {
+    font-size: 1.6vw;
+}
+
+.home-button {
+    display: inline-block;
+    margin-top: 2vw;
+    padding: 1vw 2vw;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    border: 0.2vw solid var(--accent-color);
+    border-radius: 0.5vw;
+    transition: all 0.3s ease;
+    font-size: 1.2vw;
+    transform: scale(1);
+    transform-origin: center center;
+}
+
+.home-button:hover {
+    background: var(--accent-color);
+    color: var(--secondary-color);
+    border: 0.2vw solid var(--secondary-color);
+}

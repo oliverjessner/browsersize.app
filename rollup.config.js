@@ -23,5 +23,3 @@ export default {
     input: './public/src/logic.js',
     output: [staging, production],
 };
-
-import './scripts/minify-html.js';

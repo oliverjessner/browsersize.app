@@ -1,22 +1,23 @@
 {
-    "name": "browsersize.app",
-    "module": "index.ts",
-    "type": "module",
-    "devDependencies": {
-        "bun-types": "latest",
-        "@rollup/plugin-terser": "^0.4.4",
-        "rollup-plugin-generate-html-template": "^1.7.0"
-    },
-    "scripts": {
-        "staging": "bun --hot run index.ts --staging",
-        "production": "bun run index.ts",
-        "build": "rollup --config"
-    },
-    "version": "0.5.0",
-    "peerDependencies": {
-        "typescript": "^5.0.0"
-    },
-    "dependencies": {
-         "hono": "^3.6.0"
-    }
+  "name": "browsersize.app",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "latest",
+    "@rollup/plugin-terser": "^0.4.4",
+    "rollup-plugin-generate-html-template": "^1.7.0",
+    "html-minifier": "^4.0.0"
+  },
+  "scripts": {
+    "staging": "bun --hot run index.ts --staging",
+    "production": "bun run index.ts",
+    "build": "rollup --config && bun ./scripts/minify-html.js"
+  },
+  "version": "0.5.0",
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "hono": "^3.6.0"   
+  }
 }
