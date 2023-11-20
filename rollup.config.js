@@ -16,10 +16,6 @@ const production = {
     format: 'iife',
     plugins: [
         terser(),
-        htmlTemplate({
-            template: './public/html/home_template.html',
-            target: './public/index.html',
-        }),
     ],
 };
 

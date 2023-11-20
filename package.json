@@ -3,20 +3,21 @@
     "module": "index.ts",
     "type": "module",
     "devDependencies": {
-        "bun-types": "latest"
+        "bun-types": "latest",
+        "@rollup/plugin-terser": "^0.4.4",
+        "rollup-plugin-generate-html-template": "^1.7.0",
+        "html-minifier": "^4.0.0"
     },
     "scripts": {
-        "staging": "bun --hot run index.ts --staging",
+        "staging": "bun run build && bun --hot run index.ts --staging",
         "production": "bun run index.ts",
-        "build": "rollup --config"
+        "build": "rollup --config && bun ./scripts/minify-html.js"
     },
     "version": "0.5.0",
     "peerDependencies": {
         "typescript": "^5.0.0"
     },
     "dependencies": {
-        "@rollup/plugin-terser": "^0.4.4",
-        "hono": "^3.6.0",
-        "rollup-plugin-generate-html-template": "^1.7.0"
+        "hono": "^3.6.0"
     }
 }

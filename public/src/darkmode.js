@@ -4,6 +4,7 @@ const themeButton = document.querySelector('.theme-button');
 function setTheme(theme) {
     body.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
+    themeButton.setAttribute('aria-label', theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode');
 }
 
 function toggleTheme() {
