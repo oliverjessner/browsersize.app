@@ -28,5 +28,6 @@
     },
     "dependencies": {
         "hono": "^3.6.0"
-    }
+    },
+    "license": "MIT"
 }
