@@ -2,6 +2,15 @@
     "name": "browsersize.app",
     "module": "index.ts",
     "type": "module",
+    "contributors": [
+        {
+            "name": "Oliver Jessner",
+            "url": "oliverjessner.at"
+        },
+        {
+            "name": "Felicitas Tomke"
+        }
+    ],
     "devDependencies": {
         "bun-types": "latest",
         "@rollup/plugin-terser": "^0.4.4",
